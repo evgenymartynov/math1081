@@ -1,0 +1,114 @@
+\centering{\bf \Large 2008 Version 1a}
+
+\begin{enumerate}
+% Question 1, truth tables
+\item
+    \begin{enumerate}
+    \item 
+        $(p \rightarrow (\sim q)) \wedge r$
+
+        \begin{tabular}{c|c|c|c|c}
+            $p$ & $q$ & $r$ & $p \rightarrow (\sim q)$ &
+                $(p \rightarrow (\sim q)) \wedge r$ \\
+            \hline
+            T & T & T & F & F \\
+            T & T & F & F & F \\
+            T & F & T & T & T \\
+            T & F & F & T & F \\
+            F & T & T & T & T \\
+            F & T & F & T & F \\
+            F & F & T & T & T\ \\
+            F & F & F & T & F \\
+        \end{tabular}
+
+        \vspace{3mm}
+
+        $q \rightarrow ((\sim p) \wedge r)$
+
+        \begin{tabular}{c|c|c|c|c}
+            $p$ & $q$ & $r$ & $(\sim p) \wedge r$ &
+                $q \rightarrow ((\sim p) \wedge r)$ \\
+            \hline
+            T & T & T & F & F \\
+            T & T & F & F & F \\
+            T & F & T & F & T \\
+            T & F & F & F & T \\
+            F & T & T & T & T \\
+            F & T & F & F & F \\
+            F & F & T & T & T \\
+            F & F & F & F & T \\
+        \end{tabular}
+
+    \item
+        First off, note that the second cannot imply the first when
+        $p = q = r = F$.
+
+        On the other hand, the first \textbf{does} imply the second,
+        which can be seen from this truth table:
+
+        \begin{tabular}{c|c|c|c|c|c}
+            $p$ & $q$ & $r$ & $(p \rightarrow (\sim q)) \wedge r$ &
+                $q \rightarrow ((\sim p) \wedge r)$ &
+                first $\rightarrow$ second \\
+            \hline
+            T & T & T & F & F & T \\
+            T & T & F & F & F & T \\
+            T & F & T & T & T & T \\
+            T & F & F & F & T & T \\
+            F & T & T & T & T & T \\
+            F & T & F & F & F & T \\
+            F & F & T & T & T & T \\
+            F & F & F & F & T & T \\
+        \end{tabular}
+
+        Hence, the first formula logically implies the second.
+    \end{enumerate}
+
+% Question 2: m!n! < (m+n)!
+\item
+    \begin{theorem}
+        If $m$ and $n$ are positive integers, then $m!n! < (m+n)!$
+    \end{theorem}
+    \begin{proof}
+        Let $m, n \in \Z^+$.
+
+        Now,
+        \begin{align*}
+            m!n! &= (1 \times 2 \times 3 \times \dots \times m)
+                    (1 \times 2 \times 3 \times \dots \times n) \\
+            &< 1 \times 2 \times 3 \times \dots \times m
+                    (m+1)(m+2)(m+3)\dots(m+n) \\
+            &= (m+n)!
+        \end{align*}
+        as $1 < m+1, 2 < m+2, \dots, n < m+n$.
+
+        It follows that $m!n! < (m+n)!$, thus completing the proof.
+    \end{proof}
+
+% Question 3: ax cos pi x
+\item
+    \begin{theorem}
+        If $a \in \R^+$, then the equation $ax = \cos \pi x$ has exactly
+        one solution $x$ such that $0 \leq x \leq 1$.
+    \end{theorem}
+    \begin{proof}
+        Let $a \in R^+$. Let $f(x) = ax - \cos \pi x$.
+
+        Now, $f(0) = -1$ and $f(1) = a + 1$.
+
+        Clearly, $f$ is continuous on the interval $[0, 1]$.
+        Thus, as $-1 \leq 0 \leq a+1$, by the intermediate value
+        theorem, there exists some $c \in [0, 1]$ such that $f(c) = 0$.
+
+        That is, there is \textit{a} solution for $ax = \cos \pi x$ on
+        the specified interval.
+
+        Further, on the interval $[0, 1]$,
+        $$f'(x) = a + \pi \sin \pi x > 0$$
+        that is, $f$ is increasing, and so it can have at most one root
+        in that region.
+
+        It follows that $ax = \cos \pi x$ has exactly one solution on
+        the interval $[0, 1]$, thus completing the proof.
+    \end{proof}
+\end{enumerate}
