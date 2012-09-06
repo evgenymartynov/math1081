@@ -1,0 +1,87 @@
+\centering{\bf \Large 2009 Version 2a}
+
+\begin{enumerate}
+% Question 1, logical equivalences
+\item ~
+
+    \begin{tabular}{ll}
+        $p \rightarrow (\sim (q \wedge (\sim p)))$ & \\
+        $\Leftrightarrow(\sim p) \vee (\sim (q \wedge (\sim p)))$ &
+            as $v \rightarrow u \Leftrightarrow (\sim v) \vee u$ \\
+        $\Leftrightarrow\sim(p \wedge (q \wedge (\sim p)))$ &
+            De Morgan's law \\
+        $\Leftrightarrow\sim(p \wedge (\sim p) \wedge q)$ &
+            Commutative and associative laws \\
+        $\Leftrightarrow\sim(\mathbb{F} \wedge q)$ & Law of negation \\
+        $\Leftrightarrow\sim(\mathbb{F})$ & Domination law \\
+        $\Leftrightarrow\mathbb{T}$ & Negation of a contradiction \\
+    \end{tabular}
+
+% Question 2: induction
+\item
+    \begin{theorem}
+        If $n \in \Z^+$, then
+        $$(1 \times 2) + (2 \times 5) + \dots + n(3n-1) = n^2(n+1)$$
+    \end{theorem}
+    \begin{proof}
+        We prove by induction.
+
+        When $n = 1$, LHS $= 1 \times 2 = 2$, RHS $= 1^2 \times 2 = 2$,
+        and so the result is true for $n=1$.
+
+        Assume the result for $n=k$, where $k \in \Z^+$. That is:
+        $$(1 \times 2) + (2 \times 5) + \dots + k(3k-1) = k^2(k+1)$$
+
+        Consider $n = k+1$. We have:
+        \begin{align*}
+            \textrm{LHS} &= (1 \times 2) + \dots + k(3k-1) + (k+1)(3k+2) \\
+            &= k^2(k+1) + (k+1)(3k+2) & \textrm{(by assumption)} \\
+            &= (k+1)(k^2 + 3k + 2) \\
+            &= (k+1)(k+1)(k+2) & \textrm{(factorising)} \\
+            &= (k+1)^2((k+1)+1) \\
+            &= \textrm{RHS}
+        \end{align*}
+
+        Hence, if the result is true for $n=k$ for some $k \in \Z^+$,
+        then it is also true for $n=k+1$.
+
+        Therefore, the result is proved for all positive integers $n$,
+        by induction, and the proof is complete.
+    \end{proof}
+
+% Question 3: irrationality
+\item
+    \begin{theorem}
+        If $x \in \R$ and $2x^2 - 3 = 0$, then $x$ is irrational.
+    \end{theorem}
+    \begin{proof}
+        We prove by contradiction.
+
+        Let $x \in \R$ and $2x^2 - 3 = 0$.
+        Solving, we obtain
+        $$x^2 = \frac{3}{2}$$
+
+        Suppose that $x$ is rational, that is, it can be written as an
+        irreducible ratio of two integers, $x = \frac{p}{q}$ for some
+        $p, q \in \Z \backslash \{0\}$.
+
+        Then, $x^2 = \frac{p^2}{q^2} = \frac{3}{2}$ and thus
+        $$2p^2 = 3q^2$$
+
+        Clearly, the LHS is even, and so $q^2$ must be even also.
+        This implies that $q$ is even, and hence $q = 2r$ for some
+        $r \in \Z$.
+
+        Simplifying,
+        $$p^2 = 2 \times 3 \times r^2$$
+
+        By similar argument, we see that $p$ must be even, and hence
+        $p$ and $q$ share a common factor of 2.
+        But since we assumed that $p$ and $q$ form an irreducible
+        fraction, this is a contradiction.
+
+        Thus, the initial assumption was wrong.
+
+        It follows that $x$ is irrational, and the proof is complete.
+    \end{proof}
+\end{enumerate}
