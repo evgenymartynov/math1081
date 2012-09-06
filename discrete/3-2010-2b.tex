@@ -1,0 +1,101 @@
+\centering{\bf \Large 2009 Version 1a}
+
+\begin{enumerate}
+% Question 1, logic
+\item ~
+
+    \begin{tabular}{l l}
+    $(p \rightarrow q) \wedge (q \rightarrow (\sim p \vee r))$ &  \\
+    $\Leftrightarrow ((\sim p) \vee q) \wedge ((\sim q) \vee (\sim p \vee r))$
+        & as $v \rightarrow u \Leftrightarrow (\sim v) \vee u$ \\
+    $\Leftrightarrow ((\sim p) \vee q) \wedge ((\sim p) \vee (\sim q \vee r))$
+        & Associative, commutative laws \\
+    $\Leftrightarrow (\sim p) \vee (q\, \wedge (\sim q \vee r))$
+        & Distributive law \\
+    $\Leftrightarrow (\sim p) \vee ((q\, \wedge \sim q) \vee (q \wedge r))$
+        & Distributive law \\
+    $\Leftrightarrow (\sim p) \vee (\mathbb{F} \vee (q \wedge r))$
+        & Law of negation \\
+    $\Leftrightarrow (\sim p) \vee (q \wedge r)$
+        & Identity law \\
+    $\Leftrightarrow p \rightarrow (q \wedge r)$
+        & as $v \rightarrow u \Leftrightarrow (\sim v) \vee u$ \\
+    \end{tabular}
+
+    as required.
+
+% Question 2: equality proof
+\item
+    \begin{theorem}
+        If $n \in \Z^+$, tehn
+        $$(n+1)(n+2)\dots(2n) = 2^n \times 1 \times 3 \times \dots \times (2n-1)$$
+    \end{theorem}
+    \begin{proof}
+        Let $n \in \Z^+$.
+
+        Now,
+        \begin{align*}
+            \textrm{LHS} &= (n+1)(n+2)\dots(2n) \\
+            &= \frac{1 \times 2 \times 3 \times \dots \times n \times (n+1) \times \dots \times (2n)}{1 \times 2 \times 3 \times \dots \times n} \\
+            &= \frac{(2n)!}{n!}
+        \end{align*}
+
+        And,
+        \begin{align*}
+            \textrm{RHS} &= 2^n \times 1 \times 3 \times \dots \times (2n-1) \\
+            &= 2^n \times \left( \frac{1 \times 2 \times 3 \times \dots \times 2n}{2 \times 4 \times 6 \times \dots \times 2n} \right) \\
+            % kill me now
+            &= (2n)! \times\frac
+            {\overbrace{2 \times 2 \times \dots \times 2}^{n \textrm{ terms}}}
+            {\underbrace{2 \times 4 \times 6 \times \dots \times 2n}_{n \textrm{ terms}}} \\
+            &= (2n)! \times \frac{1}{1 \times 2 \times 3 \times \dots \times n} \\
+            &= \frac{(2n)!}{n!} \\
+            &= \textrm{LHS}
+        \end{align*}
+
+        The result follows, thus completing the proof.
+    \end{proof}
+
+% Question 3: irrationality
+\item
+    \begin{theorem}
+        If $n \in \Z^+$, then $\sqrt{4n-2}$ is irrational.
+    \end{theorem}
+    \begin{proof}
+        We prove this by contradiction.
+
+        Let $n \in \Z^+$.
+        Suppose that $\sqrt{4n-2}$ is rational, that is, it can be
+        written as $\frac{p}{q}$, with $p, q \in \Z$.
+
+        Without loss of generality, we assume that $p$ and $q$ share no
+        common factors.
+
+        Then,
+        \begin{align*}
+            \sqrt{4n-2} &= \frac{p}{q} \\
+            4n-2 &= \frac{p^2}{q^2} \\
+            2(2n-1) &= \frac{p^2}{q^2} \\
+            \Rightarrow 2(2n-1)q^2 &= p^2
+        \end{align*}
+
+        (Since the above are integers) It follows that $p^2$ is even,
+        and so $p$ is also even.
+        Suppose $p = 2m$, for some $m \in \Z$.
+
+        Then we have,
+        \begin{align*}
+            2(2n-1)q^2 &= p^2 \\
+            2(2n-1)q^2 &= 4m^2 \\
+            (2n-1)q^2 &= 2m^2 \\
+        \end{align*}
+
+        Similarly, we see that $q$ is also even.
+        But since $p$ and $q$ share no common factors, this is a
+        contradiction.
+
+        Thus, the initial assumption was wrong, and it follows that
+        $\sqrt{4n-2}$ is irrational for all $n \in \Z^+$, completing
+        the proof.
+    \end{proof}
+\end{enumerate}
