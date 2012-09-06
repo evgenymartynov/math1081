@@ -1,0 +1,94 @@
+\centering{\bf \Large 2009 Version 1a}
+
+\begin{enumerate}
+% Question 1, logic
+\item
+    \begin{enumerate}
+    \item Let
+        \begin{align*}
+            m &= \textrm{``I earn some money''} \\
+            h &= \textrm{``I go for a holiday this summer''} \\
+            w &= \textrm{``I work this summer''} \\
+        \end{align*}
+        The argument is:
+
+        \begin{tabular}{c}
+            $m \rightarrow h$ \\
+            $h \vee w$ \\
+            \hline
+            $\therefore (\sim h) \rightarrow (\sim m) \wedge w$ \\
+        \end{tabular}
+
+    \item
+        Using a truth table, we consider critical rows where the
+        hypotheses are true:
+
+        \begin{tabular}{c|c|c|c|c|c|c}
+        $m$ & $h$ & $w$ & $m \rightarrow h$ & $h \vee w$ &
+            $(\sim m) \wedge w$ &
+            $(\sim h) \rightarrow (\sim m) \wedge w$ \\
+        \hline
+        T & T & T & T & T & F & \textbf{T} \\
+        T & T & F & T & T & F & \textbf{T} \\
+        T & F & T & F & * & * & * \\
+        T & F & F & F & * & * & * \\
+        F & T & T & T & T & T & \textbf{T} \\
+        F & T & F & T & T & F & \textbf{T} \\
+        F & F & T & T & T & T & \textbf{T} \\
+        F & F & F & T & F & * & * \\
+        \end{tabular}
+
+        The conclusion is always true whenever the hypotheses are true,
+        and therefore the above argument is logically valid.
+    \end{enumerate}
+
+% Question 2: rationals
+\item
+    \begin{theorem}
+        Between any two different rational numbers there is another
+        rational number.
+    \end{theorem}
+    \begin{proof}
+        Let $x, y$ be different rational numbers.
+        Without loss of generality, assume $x < y$.
+
+        Then we have $\frac{x+x}{2} < \frac{x+y}{2} < \frac{y+y}{2}$.
+
+        Since $x, y$ are rational, and rational numbers are closed under
+        addition and division, it follows that $\frac{x+y}{2}$ is also a
+        rational number; and the proof is finished.
+    \end{proof}
+
+% Question 3: divisibility
+\item
+    \begin{theorem}
+        If $n$ is a positive integer, then $4^{2n} + 10n - 1$ is a
+        multiple of 25.
+    \end{theorem}
+    \begin{proof}
+        We prove by induction.
+
+        When $n = 1$, $4^{2n} + 10n - 1 = 25$, and so the theorem holds for
+        $n = 1$.
+
+        Assume the theorem holds for $n = k$, where $k \in \Z^+$.
+        That is,
+        $$4^{2k} + 10k - 1 = 25A$$
+        for some $A \in \Z^+$.
+
+        Now consider $n = k+1$.
+        We have
+        \begin{align*}
+            4^{2k+2} + 10(k+1) - 1 &= 16 \times 4^{2k} + 10k + 9 \\
+            &= 16 \times (4^{2k} + 10k - 1) - 150k + 25 \\
+            &= 16 \times 25A + 25(1 - 6k) & \textrm{(by assumption)} \\
+            &= 25(1 - 6k + 16A)
+        \end{align*}
+        which is divisible by 25, since $k, A$ are integers.
+
+        Hence, if theorem holds for $n=k, k \in \Z^+$, it also holds for
+        $n = k+1$.
+
+        Therefore the theorem is true by induction, completing the proof.
+    \end{proof}
+\end{enumerate}
