@@ -1,0 +1,112 @@
+\centering{\bf \Large 2008 Version 3a}
+
+\begin{enumerate}
+% Question 1, truth tables
+\item
+    \begin{enumerate}
+    \item 
+        $\sim p \rightarrow (q \wedge p)$
+
+        \begin{tabular}{c|c|c|c|c}
+        $p$ & $q$ & $\sim p$ & $q \wedge p$ & $\sim p \rightarrow (q \wedge p)$ \\
+        \hline
+        T & T & F & T & T \\
+        T & F & F & F & T \\
+        F & T & T & F & F \\
+        F & F & T & F & F \\
+        \end{tabular}
+
+        \vspace{3mm}
+
+        $(p \wedge q) \rightarrow q$
+
+        \begin{tabular}{c|c|c|c}
+        $p$ & $q$ & $p \wedge q$ & $(p \wedge q) \rightarrow q$ \\
+        \hline
+        T & T & T & T \\
+        T & F & F & T \\
+        F & T & F & T \\
+        F & F & F & T \\
+        \end{tabular}
+
+    \item
+        First off, note that the second formula cannot imply the first
+        when $p = q = F$.
+
+        On the other hand, the first formula \textbf{does} imply the
+        second, since when the first is true, the second is true also.
+
+        This can be better explained using this truth table:
+
+        \begin{tabular}{c|c|c|c|c}
+        $p$ & $q$ & $\sim p \rightarrow (q \wedge p)$ &
+            $(p \wedge q) \rightarrow q$ & first $\rightarrow$ second \\
+        \hline
+        T & T & T & T & T \\
+        T & F & T & T & T \\
+        F & T & F & T & T \\
+        F & F & F & T & T \\
+        \end{tabular}
+
+        Hence, first $\rightarrow$ second.
+
+    \end{enumerate}
+
+% Question 2, log_6 (11) not in Q
+\item
+    \begin{theorem}
+        $\log_6 11$ is irrational.
+    \end{theorem}
+    \begin{proof}
+        We prove by contradiction.
+
+        Suppose that $\log_6 11$ is rational, that is, there exist
+        integers $p$ and $q$ such that $log_6 11 = \frac{p}{q}$.
+        Without loss of generality, we can assume $p, q > 0$.
+
+        Then,
+        \begin{align*}
+            \log_6 11 &= \frac{p}{q} \\
+            11 &= 6^\frac{p}{q} \\
+            11^q &= 6^p \\
+        \end{align*}
+
+        which is a contradiction, as the LHS is always odd and RHS is
+        always even.
+
+        Hence, our assumption was false, and it follows that $\log_6 11$
+        is irrational, thus completing the proof.
+    \end{proof}
+
+% Question 3, the one with prime numbers.
+\item
+    \begin{theorem}
+        $q(n) = 11n^2 + 32n$ is a prime number for two integer values
+        of $n$, and composite for every other integer values of $n$.
+    \end{theorem}
+    \begin{proof}
+        If $q(n)$ is prime, then it has exactly two factors, which are
+        1 and $q(n)$.
+
+        Factorising $q(n)$, we obtain $q(n) = n(11n+32)$.
+        From the definition, it is necessary that at least one of
+        $n = \pm 1$ or $11n + 32 = \pm 1$ are true.
+
+        We now consider the possible cases.
+
+        If $n = 1$,  then $q(n) = 43$, which is prime.
+
+        If $n = -1$, then $q(n) = -21$, which is not prime.
+
+        If $11n + 32 = 1$, then $n = \frac{-31}{11} \not \in \Z$.
+        This contradicts the constraint of $n \in \Z$ and hence is not
+        possible.
+
+        If $11n + 32 = -1$, then $n = -3$, and hence $q(n) = 3$,
+        which is prime.
+
+        By exhaustion of possible cases where $q(n)$ can be prime, we
+        conclude that $q(n)$ is prime in only two cases (namely, $n=1$
+        or $n=-3$), and composite for every other integer value of $n$.
+    \end{proof}
+\end{enumerate}
